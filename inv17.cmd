@@ -30,3 +30,7 @@ wmic NIC get Description,MACAddress,NetEnabled,Speed >> %metadata%\NICs.txt
 wmic DISKDRIVE get InterfaceType,Name,Size,Status >> %metadata%\disks.txt
 
 wmic USERACCOUNT get Caption,Name,PasswordRequired,Status >> %metadata%\accounts.txt
+
+GPRESULT /H %metadata%\GPReport.html
+
+WMIC PATH Win32_Battery Get Availability, BatteryRechargeTime, BatteryStatus, Caption, Chemistry, ConfigManagerErrorCode, ConfigManagerUserConfig, CreationClassName, Description, DesignCapacity, DesignVoltage, DeviceID, ErrorCleared, ErrorDescription, EstimatedChargeRemaining, EstimatedRunTime, ExpectedBatteryLife, ExpectedLife, FullChargeCapacity, InstallDate, LastErrorCode, MaxRechargeTime, Name, PNPDeviceID, PowerManagementSupported, SmartBatteryVersion, Status, StatusInfo, SystemCreationClassName, SystemName, TimeOnBattery, TimeToFullCharge >> %metadata%\battery.txt
